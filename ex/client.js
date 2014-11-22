@@ -39,6 +39,6 @@ ws.socket.addEventListener('open', function init() {
 			console.log(impressions)
 			experiments.set(imp_key, impressions);
 		}
-		setTimeout(set_impression, 3000)
+		setTimeout(set_impression, 3000) // to prevent miscounting bounces + protocol convergence errors
 	})
 })

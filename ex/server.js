@@ -6,7 +6,11 @@ var PORT = process.argv[2]
 var httpServer = http.createServer(function server_example(req, res) {
 	var url = req.url;
 	if (RegExp('^/[^/]*$').test(url)) {
-		var variant = ~~Math.random() * 2 > 1 ? 'A' : 'B';
+		var now, variant 
+		now = new Date().getTime();
+		variant = parseInt(now, 10)%2 === 0 ? 'A':'B';
+		console.log(now)
+		console.log(variant)
 		res.setHeader("Content-Type", 'text/html');
 		res.statusCode = 200;
 		fs.createReadStream('./static/pages/sample' + variant + '.html').pipe(res)

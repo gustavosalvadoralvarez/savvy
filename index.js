@@ -1,14 +1,12 @@
-var measurement = require('./lib/measurement.js');
-var net = require('./lib/net.js');
 
 module.exports = Savvy;
 
 function Savvy(server) {
 	var self = this,
 		_lab, _net;
-	self.lab = _lab = require('./lib/lab.js')(measurement());
+	self.lab = _lab = require('./lib/lab.js')(require('./lib/measurement.js')());
 	(function install(server) {
-		self.net = _net = net(server, _lab);
+		self.net = _net = require('./lib/net.js')(server, _lab);
 		return self;
 	})(server);
 	return self
