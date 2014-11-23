@@ -9,6 +9,7 @@
   "author": "GSA",
   "license": "ISC",
   "dependencies": {
+    "dnode": "^1.2.0",
     "scuttlebutt": "^5.6.9",
     "through": "^2.3.6",
     "websocket-stream": "^1.1.0",
