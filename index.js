@@ -6,7 +6,7 @@ function Savvy(ops) {
 		_lab, _net;
 	self.lab = _lab = require('./lib/lab.js')(require('./lib/measurement.js')());
 	self.net = _net = require('./lib/net.js')(_lab, ops);
-	self.listen = _net.listen
+	self.listen = _net.listen;
 	return self
 }
 /*

@@ -9,8 +9,6 @@ var httpServer = http.createServer(function server_example(req, res) {
 		var now, variant 
 		now = new Date().getTime();
 		variant = parseInt(now, 10)%2 === 0 ? 'A':'B';
-		console.log(now)
-		console.log(variant)
 		res.setHeader("Content-Type", 'text/html');
 		res.statusCode = 200;
 		fs.createReadStream('./static/pages/sample' + variant + '.html').pipe(res)
@@ -55,5 +53,6 @@ var httpServer = http.createServer(function server_example(req, res) {
 var savvy = require('../index.js')(httpServer);
 
 var lab = savvy.lab;
+
 
 lab.observations.readStream(process.stdout);
